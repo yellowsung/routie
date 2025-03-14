@@ -54,7 +54,7 @@
                 android:src="@drawable/idbar" />
 
             <EditText
-                android:id="@+id/editTextTextID"
+                android:id="@+id/editTextID"
                 android:layout_width="269dp"
                 android:layout_height="85dp"
                 android:layout_gravity="center"
@@ -96,7 +96,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

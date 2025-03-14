@@ -13,6 +13,8 @@ buildscript {
     }
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.10")
+        classpath ("androidx.compose.compiler:compiler:1.5.8")
+
         val nav_version = "2.8.8"
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
     }
