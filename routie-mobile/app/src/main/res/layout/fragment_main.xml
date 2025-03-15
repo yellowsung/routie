@@ -30,7 +30,8 @@
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toStartOf="@id/btn_profile"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bell" />
+        app:srcCompat="@drawable/bell"
+        android:contentDescription="알림버튼"/>
 
 
     <ImageButton
@@ -42,7 +43,8 @@
         android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        android:contentDescription="프로필버튼"/>
 
     <TextView
         android:id="@+id/txt_nowdate"
@@ -64,11 +66,10 @@
         android:src="@android:drawable/ic_menu_my_calendar"
         app:layout_constraintStart_toEndOf="@id/txt_nowdate"
         app:layout_constraintTop_toTopOf="@id/txt_nowdate"
-        android:layout_marginStart="10dp"/>
+        android:layout_marginStart="10dp"
+        android:contentDescription="달력"/>
 
     <!-- 스케치북 -->
-
-    <!-- 캐릭터 및 일일 브리핑 -->
 
     <ImageView
         android:id="@+id/SketchbookLayout"
@@ -80,7 +81,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt_nowdate" />
 
-    <!-- 하단 메뉴 -->
 
     <ImageView
         android:id="@+id/img_sketchbook_highlight"
@@ -102,6 +102,7 @@
         app:layout_constraintTop_toTopOf="@id/img_sketchbook_highlight"
         app:srcCompat="@drawable/star" />
 
+<!--    운동정보  -->
     <ImageView
         android:id="@+id/img_dailybriefing"
         android:layout_width="200dp"
@@ -128,7 +129,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.5"
         android:orientation="vertical"/>
-
+<!--하단정보 -->
     <ImageButton
         android:id="@+id/btn_shop"
         android:layout_width="60dp"
@@ -138,7 +139,8 @@
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/store" />
+        app:srcCompat="@drawable/store"
+        android:contentDescription="상점으로 이동"/>
 
     <ImageButton
         android:id="@+id/img_myroom"
@@ -149,7 +151,8 @@
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_shop"
-        app:srcCompat="@drawable/sofa" />
+        app:srcCompat="@drawable/sofa"
+        android:contentDescription="방버튼"/>
 
     <ImageView
         android:id="@+id/img_coin"

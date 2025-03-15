@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="#F5F1EB">
 
+    <!-- 타이틀 영역 -->
     <LinearLayout
         android:id="@+id/TitleLayout"
         android:layout_width="match_parent"
@@ -24,9 +25,9 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             app:srcCompat="@drawable/routie_" />
-
     </LinearLayout>
 
+    <!-- 입력 필드 영역 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,60 +38,88 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/signup_2" />
-
-        <ImageView
-            android:id="@+id/imageView3"
+        <EditText
+            android:id="@+id/editTextID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/idbar" />
+            android:hint="아이디 입력"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/idbar"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
 
-        <ImageView
-            android:id="@+id/imageView4"
+        <EditText
+            android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pwbar" />
+            android:hint="비밀번호 입력"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/pwbar"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:inputType="textPassword|textVisiblePassword"/>
 
-        <ImageView
-            android:id="@+id/imageView6"
+        <View
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            app:srcCompat="@drawable/line" />
+            android:background="@drawable/line" />
 
-        <ImageView
-            android:id="@+id/imageView7"
+        <EditText
+            android:id="@+id/editTextGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/gender" />
+            android:hint="성별 (남/여)"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/gender"
+            android:textSize="16sp"
+            android:textColor="#000000"/>
 
-        <ImageView
-            android:id="@+id/imageView8"
+        <EditText
+            android:id="@+id/editTextAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/age" />
+            android:hint="나이 입력"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/age"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:inputType="number"/>
 
-        <ImageView
-            android:id="@+id/imageView9"
+        <EditText
+            android:id="@+id/editTextHeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/height" />
+            android:hint="키 입력 (cm)"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/height"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:inputType="numberDecimal"/>
 
-        <ImageView
-            android:id="@+id/imageView10"
+        <EditText
+            android:id="@+id/editTextWeight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/weight" />
+            android:hint="몸무게 입력 (kg)"
+            android:gravity="center"
+            android:padding="10dp"
+            android:background="@drawable/weight"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:inputType="numberDecimal"/>
 
+        <!-- 완료 버튼 -->
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnSignup"
             android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="완료"
+            android:contentDescription="회원가입 완료"
             app:srcCompat="@drawable/finish" />
 
     </LinearLayout>

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         // ✅ MainFragment를 추가
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, MainFragment())
+                .replace(R.id.MainFragment, MainFragment())
                 .commit()
         }
         val navHostFragment =

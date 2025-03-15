@@ -39,10 +39,19 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // ✅ 로그인 상태 확인 후 자동 로그인
+        val sharedPreferences = requireContext().getSharedPreferences("app_prefs", 0)
+        val isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false)
+
+        if (isLoggedIn) {
+            findNavController().navigate(R.id.MainFragment) // 자동 로그인 후 바로 이동
+            return
+        }
+
         // 로그인 버튼 클릭 시
         binding.btnLogin.setOnClickListener {
-            val userId = binding.editTextID.text.toString()
-            val password = binding.editTextPassword.text.toString()
+            val userId = binding.editTextID.text.toString() ?: ""
+            val password = binding.editTextPassword.text.toString() ?: ""
 
             if (userId.isNotEmpty() && password.isNotEmpty()) {
                 val loginRequest = LoginRequest(userId, password)
@@ -53,9 +62,9 @@ class LoginFragment : Fragment() {
         }
 
         // 회원가입 버튼 클릭 시
-        binding.btnSignup.setOnClickListener {
-            findNavController().navigate(R.id.SignupFragment)
-        }
+//        binding.btnSignup.setOnClickListener {
+//            findNavController().navigate(R.id.SignupFragment)
+//        }
     }
 
     private fun loginUser(request: LoginRequest) {

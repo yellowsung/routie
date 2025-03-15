@@ -36,24 +36,28 @@ class MainFragment : Fragment() {
         // ✅ 알림 버튼 클릭 시 토글
         btnBell.setOnClickListener {
             if (!isNoticeBubbleVisible) {
-                bubble2.visibility = ImageView.VISIBLE
+                bubble2.visibility = View.VISIBLE
                 isNoticeBubbleVisible = true
             } else {
-                bubble2.visibility = ImageView.GONE
+                bubble2.visibility = View.GONE
                 isNoticeBubbleVisible = false
             }
         }
 
         // ✅ 프로필 버튼 클릭 시 SettingActivity 이동
         buttonProfile.setOnClickListener {
-            val intent = Intent(requireContext(), SettingFragment::class.java)
-            startActivity(intent)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.SettingFragment, SettingFragment()) // 여기에 실제 Fragment 레이아웃 ID 입력
+                .addToBackStack(null)
+                .commit()
         }
 
         // ✅ 테스트 버튼 클릭 시 LoginActivity 이동
         buttonTest.setOnClickListener {
-            val intent = Intent(requireContext(), LoginFragment::class.java)
-            startActivity(intent)
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.LoginFragment, LoginFragment()) // 여기에 실제 Fragment 레이아웃 ID 입력
+                .addToBackStack(null)
+                .commit()
         }
 
         // ✅ 현재 날짜 가져오기
@@ -77,10 +81,11 @@ class MainFragment : Fragment() {
             )
 
             // 📌 일(day) 숨기기 (오류 방지)
-            val dayPicker = datePickerDialog.datePicker.findViewById<View>(
-                resources.getIdentifier("day", "id", "android")
-            )
-            dayPicker?.visibility = View.GONE // null 체크 추가
+            val dayPickerId = resources.getIdentifier("day", "id", "android")
+            if (dayPickerId != 0) {
+                val dayPicker = datePickerDialog.datePicker.findViewById<View>(dayPickerId)
+                dayPicker?.visibility = View.GONE
+            }
 
             datePickerDialog.show()
         }
