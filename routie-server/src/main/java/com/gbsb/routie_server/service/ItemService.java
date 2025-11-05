@@ -25,10 +25,16 @@ public class ItemService {
     // 카테고리별 아이템을 DTO로 조회
     public List<ItemDto> getItemDtosByCategory(int categoryId) {
         return itemRepository.findByCategory_CategoryId(categoryId).stream()
+                .filter(item -> !item.isGachaItem())
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
 
+    public List<ItemDto> getGachaItemDtos() {
+        return itemRepository.findByGachaItemTrue().stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
+    }
     // 변환 로직 따로 분리 (Item → ItemDto)
     private ItemDto convertToDto(Item item) {
         ItemDto dto = new ItemDto();

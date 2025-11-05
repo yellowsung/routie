@@ -21,6 +21,12 @@ public class ItemController {
         return ResponseEntity.ok(itemService.getAllItemDtos());
     }
 
+    // 가챠 아이템 조회
+    @GetMapping("/gacha")
+    public ResponseEntity<List<ItemDto>> getGachaItems() {
+        return ResponseEntity.ok(itemService.getGachaItemDtos());
+    }
+
     // 카테고리별 아이템 조회
     @GetMapping("/category/{categoryId}")
     public ResponseEntity<List<ItemDto>> getItemsByCategory(@PathVariable int categoryId) {

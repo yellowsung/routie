@@ -13,7 +13,7 @@ import lombok.*;
 public class User {
 
     @Id
-    @Column(nullable = false)
+    @Column(name = "user_id", nullable = false)
     private String userId; // 로그인 시 사용하는 ID id -> userId
 
     @Column(nullable = false, unique = true)

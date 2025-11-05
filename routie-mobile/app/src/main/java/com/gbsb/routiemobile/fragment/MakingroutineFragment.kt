@@ -237,7 +237,7 @@ class MakingroutineFragment : Fragment() {
                 override fun onResponse(call: Call<Routine>, response: Response<Routine>) {
                     if (response.isSuccessful) {
                         Toast.makeText(requireContext(), "루틴이 성공적으로 저장되었습니다!", Toast.LENGTH_SHORT).show()
-                        findNavController().navigate(R.id.RoutineFragment)
+                        findNavController().popBackStack()
                     } else {
                         Toast.makeText(requireContext(), "루틴 저장 실패", Toast.LENGTH_SHORT).show()
                     }

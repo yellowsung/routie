@@ -14,6 +14,7 @@ import lombok.AllArgsConstructor;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "item_id")
     private int itemId;  // 아이템 ID
 
     @Column(nullable = false, unique = true)
@@ -28,4 +29,7 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)  // FK로 저장
     private Category category;
+
+    @Column(nullable = false)
+    private boolean gachaItem = false;
 }

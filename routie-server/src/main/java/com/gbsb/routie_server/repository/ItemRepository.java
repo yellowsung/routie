@@ -11,4 +11,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     // 특정 카테고리 아이템 가져오기
     List<Item> findByCategory_CategoryId(int categoryId);
 
+    // 가챠 아이템 O
+    List<Item> findByGachaItemTrue();
 }
