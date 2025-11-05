@@ -11,7 +11,7 @@ public class TicketLog {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", referencedColumnName = "userId")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     private int amount;

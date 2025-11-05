@@ -11,11 +11,11 @@ public class GachaLog {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", referencedColumnName = "userId")
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "item_id", referencedColumnName = "itemId")
+    @JoinColumn(name = "item_id", nullable = false)
     private Item item; // 꽝이면 null 가능
 
     private boolean isSuccess;
