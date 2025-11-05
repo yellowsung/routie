@@ -19,7 +19,7 @@ public class StepGoalRewardLog {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "userId")
     private User user;
 
     private int goalStep; // 2000, 5000, 10000
